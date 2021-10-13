@@ -28,30 +28,30 @@ Khusus user dengan status murid, kami menyediakan fitur susun jadwal kegiatan be
 - Admin
 
 ## Daftar modul :
-1. Website perencanaan kuliah (PJJ)
+1. Website perencanaan kuliah (PJJ)<br>
 Scheduling (Jadwal kegiatan, Tanggal Ujian, Deadline tugas, Jadwal rapat)<br>
 Case 1 = mirip susunjadwal ristek, user memilih matkul dengan dosen tertentu, nnt otomatis ke integrate di tabel jadwalnya, jadi otomatis kebikin selama hari senin-minggu, bakal ada kuliah/kegiatan apa saja. Kalo mau nambahin jadwal rapat tetap, bikin tempat khusus aja buat input manual. Bisa remove jadwal juga, andaikan gaperlu/drop matkul/rapat udh gaada lg.<br>
 Case 2 = User menginput jadwal kuliahnya. Format keluaran : Nama Mata Kuliah (Waktu Pelajaran). Contoh: Aljabar Linear (08:00 - 10:30). Setiap kolom mewakili hari yang berbeda. Misal kolom pertama untuk jadwal kuliah hari senin, kolom kedua untuk hari selasa, dst.
 
-2. To-do list
+2. To-do list<br>
 Ya to-do list biasa.
 
-3. Info terkini terkait pendidikan
+3. Info terkini terkait pendidikan<br>
 Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author+tanggal mungkin, kaya line today
 
-4. Forum tentang pandemi
+4. Forum tentang pandemi<br>
 Dalam forum user bisa membuat diskusi baru dan memposting pendapatnya
 (mirip seperti stack overflow cuman versi pandemi)<br>
 Kategorinya ada 3 : tips kesehatan, informasi pandemi (tentang covid, wfh, dll,), pertanyaan2 
 
-5. Quiz: Seberapa siapkah anda menghadapi pandemi covid-19?
+5. Quiz: Seberapa siapkah anda menghadapi pandemi covid-19?<br>
 Akan ada quiz seputar prokes dalam  pandemi covid-19 <br>
 Ada leaderboard hasil quiz<br>
 Mungkin akan ada artikel tentang prokes<br>
 Mini games covid (arcade), masih tentative<br>
 
 
-6. Live chart Covid dunia dan Indonesia dengan News Terkinic
+6. Live chart Covid dunia dan Indonesia dengan News Terkinic<br>
 About Us(masih maybe)
 
 ### Template repo disediakan oleh : https://github.com/laymonage/django-template-heroku
