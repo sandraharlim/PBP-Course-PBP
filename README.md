@@ -1,5 +1,8 @@
 # midtermprojectPBP_F03
 
+[![Test and Deploy][actions-badge]][commits-gh]
+[![pipeline status][pipeline-badge]][commits-gl]
+[![coverage report][coverage-badge]][commits-gl]
 ## Anggota Kelompok F03:
 - Anne Aisyah Azka (NPM: 2006484993)
 - Johanes Raka Triadana Nikaputra (NPM: 2006463326)
@@ -53,4 +56,9 @@ About Us(masih maybe)
 
 ### Template repo disediakan oleh : https://github.com/laymonage/django-template-heroku
 
+[actions-badge]: https://github.com/laymonage/django-template-heroku/workflows/Test%20and%20Deploy/badge.svg
+[commits-gh]: https://github.com/laymonage/django-template-heroku/commits/master
+[pipeline-badge]: https://gitlab.com/laymonage/django-template-heroku/badges/master/pipeline.svg
+[coverage-badge]: https://gitlab.com/laymonage/django-template-heroku/badges/master/coverage.svg
+[commits-gl]: https://gitlab.com/laymonage/django-template-heroku/-/commits/master
 
