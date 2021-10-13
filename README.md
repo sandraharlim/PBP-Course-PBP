@@ -34,7 +34,7 @@ Case 1 = mirip susunjadwal ristek, user memilih matkul dengan dosen tertentu, nn
 Case 2 = User menginput jadwal kuliahnya. Format keluaran : Nama Mata Kuliah (Waktu Pelajaran). Contoh: Aljabar Linear (08:00 - 10:30). Setiap kolom mewakili hari yang berbeda. Misal kolom pertama untuk jadwal kuliah hari senin, kolom kedua untuk hari selasa, dst.
 
 2. To-do list<br>
-Ya to-do list biasa.
+Ya to-do list biasa.<br>
 
 3. Info terkini terkait pendidikan<br>
 Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author+tanggal mungkin, kaya line today
