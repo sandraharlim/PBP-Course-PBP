@@ -37,7 +37,7 @@ Case 2 = User menginput jadwal kuliahnya. Format keluaran : Nama Mata Kuliah (Wa
 Ya to-do list biasa.<br>
 
 3. Info terkini terkait pendidikan<br>
-Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author+tanggal mungkin, kaya line today
+Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author + tanggal mungkin, kaya line today
 
 4. Forum tentang pandemi<br>
 Dalam forum user bisa membuat diskusi baru dan memposting pendapatnya
