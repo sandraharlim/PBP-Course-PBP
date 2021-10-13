@@ -53,7 +53,7 @@ Mini games covid (arcade), masih tentative<br>
 
 6. Live chart Covid dunia dan Indonesia dengan News Terkini<br>
 
-7. About Us(masih maybe)
+7. About Us (masih maybe)
 
 ### Template repo disediakan oleh : https://github.com/laymonage/django-template-heroku
 
