@@ -51,7 +51,7 @@ Mungkin akan ada artikel tentang prokes<br>
 Mini games covid (Arcade), masih tentative<br>
 
 
-6. Live Chart Covid dunia dan Indonesia dengan News Terkini<br>
+6. Live Chart Covid Dunia dan Indonesia dengan News Terkini<br>
 
 7. About Us (masih kemungkinan)
 
