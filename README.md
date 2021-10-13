@@ -26,8 +26,8 @@ Khusus user dengan status murid, kami menyediakan fitur susun jadwal kegiatan be
 
 ## Daftar modul :
 1. Website perencanaan kuliah (PJJ)
-Scheduling (Jadwal kegiatan, Tanggal Ujian, Deadline tugas, Jadwal rapat)
-Case 1 = mirip susunjadwal ristek, user memilih matkul dengan dosen tertentu, nnt otomatis ke integrate di tabel jadwalnya, jadi otomatis kebikin selama hari senin-minggu, bakal ada kuliah/kegiatan apa saja. Kalo mau nambahin jadwal rapat tetap, bikin tempat khusus aja buat input manual. Bisa remove jadwal juga, andaikan gaperlu/drop matkul/rapat udh gaada lg.
+Scheduling (Jadwal kegiatan, Tanggal Ujian, Deadline tugas, Jadwal rapat)<br>
+Case 1 = mirip susunjadwal ristek, user memilih matkul dengan dosen tertentu, nnt otomatis ke integrate di tabel jadwalnya, jadi otomatis kebikin selama hari senin-minggu, bakal ada kuliah/kegiatan apa saja. Kalo mau nambahin jadwal rapat tetap, bikin tempat khusus aja buat input manual. Bisa remove jadwal juga, andaikan gaperlu/drop matkul/rapat udh gaada lg.<br>
 Case 2 = User menginput jadwal kuliahnya. Format keluaran : Nama Mata Kuliah (Waktu Pelajaran). Contoh: Aljabar Linear (08:00 - 10:30). Setiap kolom mewakili hari yang berbeda. Misal kolom pertama untuk jadwal kuliah hari senin, kolom kedua untuk hari selasa, dst.
 
 2. To-do list
@@ -38,14 +38,14 @@ Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja y
 
 4. Forum tentang pandemi
 Dalam forum user bisa membuat diskusi baru dan memposting pendapatnya
-(mirip seperti stack overflow cuman versi pandemi)
+(mirip seperti stack overflow cuman versi pandemi)<br>
 Kategorinya ada 3 : tips kesehatan, informasi pandemi (tentang covid, wfh, dll,), pertanyaan2 
 
 5. Quiz: Seberapa siapkah anda menghadapi pandemi covid-19?
-Akan ada quiz seputar prokes dalam  pandemi covid-19 
-Ada leaderboard hasil quiz
-Mungkin akan ada artikel tentang prokes
-Mini games covid (arcade), masih tentative
+Akan ada quiz seputar prokes dalam  pandemi covid-19 <br>
+Ada leaderboard hasil quiz<br>
+Mungkin akan ada artikel tentang prokes<br>
+Mini games covid (arcade), masih tentative<br>
 
 
 6. Live chart Covid dunia dan Indonesia dengan News Terkinic
