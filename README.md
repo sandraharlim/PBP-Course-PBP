@@ -37,7 +37,11 @@ Case 2 = User menginput jadwal kuliahnya. Format keluaran : Nama Mata Kuliah (Wa
 Ya to-do list biasa.<br>
 
 3. Info terkini terkait pendidikan<br>
+<<<<<<< HEAD
 Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author+tanggal mungkin, kaya line today.
+=======
+Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author + tanggal mungkin, kaya line today
+>>>>>>> 90eeb9d99be466ffaa6b74337a78bcdf61babe0e
 
 4. Forum tentang pandemi<br>
 Dalam forum user bisa membuat diskusi baru dan memposting pendapatnya
@@ -48,12 +52,12 @@ Kategorinya ada 3 : tips kesehatan, informasi pandemi (tentang covid, wfh, dll,)
 Akan ada quiz seputar prokes dalam  pandemi covid-19 <br>
 Ada leaderboard hasil quiz<br>
 Mungkin akan ada artikel tentang prokes<br>
-Mini games covid (arcade), masih tentative<br>
+Mini games covid (Arcade), masih tentative<br>
 
 
-6. Live chart Covid dunia dan Indonesia dengan News Terkini<br>
+6. Live Chart Covid Dunia dan Indonesia dengan News Terkini.<br>
 
-7. About Us(masih maybe)
+7. About Us (masih kemungkinan)
 
 ### Template repo disediakan oleh : https://github.com/laymonage/django-template-heroku
 
