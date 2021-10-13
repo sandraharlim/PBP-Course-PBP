@@ -16,7 +16,7 @@
 https://pbp-midtermproject-f03.herokuapp.com 
 
 ## Cerita singkat aplikasi :
-**Pandemic Based Productivity(PBP)**<br>
+**Pandemic Based Productivity (PBP)**<br>
 Website ini dibuat untuk membantu pengguna menghadapi budaya-budaya baru saat pandemi seperti PJJ, WFJ, SFH, dan Prokes. Di dalam website ini terdapat fitur berita terkini terkait pandemi seperti tingkat kesembuhan, perkembangan vaksin, dan aturan baru. Untuk mendukung pengguna saling bertukar informasi, kami juga menyiapkan ruang diskusi berupa forum yang dapat diposting oleh pengguna. Terdapat quiz interaktif seputar protokol kesehatan dalam masa pandemi untuk mendukung pengguna menerapkan prokes.
 
 Khusus user dengan status murid, kami menyediakan fitur susun jadwal kegiatan belajar serta deadline tugas dan ujian. Diharapkan fitur ini membantu murid untuk menghadapi PJJ.
