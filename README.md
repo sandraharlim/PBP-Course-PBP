@@ -48,7 +48,7 @@ Kategorinya ada 3 : tips kesehatan, informasi pandemi (tentang covid, wfh, dll,)
 Akan ada quiz seputar prokes dalam  pandemi covid-19 <br>
 Ada leaderboard hasil quiz<br>
 Mungkin akan ada artikel tentang prokes<br>
-Mini games covid (arcade), masih tentative<br>
+Mini games covid (Arcade), masih tentative<br>
 
 
 6. Live Chart Covid dunia dan Indonesia dengan News Terkini<br>
