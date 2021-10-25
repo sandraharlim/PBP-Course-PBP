@@ -28,20 +28,14 @@ Khusus user dengan status murid, kami menyediakan fitur susun jadwal kegiatan be
 - Admin
 
 ## Daftar modul :
-1. Website perencanaan kuliah (PJJ)<br>
-Scheduling (Jadwal kegiatan, Tanggal Ujian, Deadline tugas, Jadwal rapat)<br>
-Case 1 = mirip susunjadwal ristek, user memilih matkul dengan dosen tertentu, nnt otomatis ke integrate di tabel jadwalnya, jadi otomatis kebikin selama hari senin-minggu, bakal ada kuliah/kegiatan apa saja. Kalo mau nambahin jadwal rapat tetap, bikin tempat khusus aja buat input manual. Bisa remove jadwal juga, andaikan gaperlu/drop matkul/rapat udh gaada lg.<br>
-Case 2 = User menginput jadwal kuliahnya. Format keluaran : Nama Mata Kuliah (Waktu Pelajaran). Contoh: Aljabar Linear (08:00 - 10:30). Setiap kolom mewakili hari yang berbeda. Misal kolom pertama untuk jadwal kuliah hari senin, kolom kedua untuk hari selasa, dst.
+1. App perencanaan kuliah (PJJ)<br>
+Pengguna **student** dapat menambahkan jadwal kuliah/sekolah, tanggal Ujian, ataupun deadline tugas. Kemudian hal ini akan ditampilkan dalam bentuk **calender**<br>
 
 2. To-do list<br>
-Ya to-do list biasa.<br>
+to-do list biasa.<br>
 
 3. Info terkini terkait pendidikan<br>
-<<<<<<< HEAD
 Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author+tanggal mungkin, kaya line today.
-=======
-Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author + tanggal mungkin, kaya line today
->>>>>>> 90eeb9d99be466ffaa6b74337a78bcdf61babe0e
 
 4. Forum tentang pandemi<br>
 Dalam forum user bisa membuat diskusi baru dan memposting pendapatnya
@@ -57,7 +51,8 @@ Mini games covid (Arcade), masih tentative<br>
 
 6. Live Chart Covid Dunia dan Indonesia dengan News Terkini.<br>
 
-7. About Us (masih kemungkinan).
+7. App scheduling biasa<br>
+Pengguna dapat menambahkan **event** seperti jadwal rapat, hari ulang tahun, ataupun reminder, yang kemudian akan ditampilkan dalam bentuk **calender** (seperti app 1, tetapi tidak eksklusif untuk **student**)
 
 ### Template repo disediakan oleh : https://github.com/laymonage/django-template-heroku
 

@@ -1,0 +1,4 @@
+Collecting dj-database-url
+  Using cached dj_database_url-0.5.0-py2.py3-none-any.whl (5.5 kB)
+Installing collected packages: dj-database-url
+Successfully installed dj-database-url-0.5.0

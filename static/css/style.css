@@ -5,3 +5,10 @@
 body {
   font-family: 'Rubik', sans-serif;
 }
+
+.bg-custom{
+  background-color:aquamarine;
+}
+.navbar-nav a:hover{
+  background-color:rgba(1, 255, 149, 0.712);
+}
