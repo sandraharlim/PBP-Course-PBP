@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    {% include 'base.html' %}
+    <h1>Add Event</h1>
+        <body>
+            <form action="" method=POST>
+                {{ form.as_p }}
+                {%csrf_token%}
+                <input type="submit" value="Add Event">
+        </body>
+</html>
