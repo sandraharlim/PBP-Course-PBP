@@ -4,7 +4,9 @@ from .forms import EventForm
 
 # Create your views here.
 def index (request):
-    return render(request, "index.html", {})
+    event = Event.objects.all().values()
+    response = {'event':event}
+    return render(request, "index.html", response)
 
 def add_event (request):
     context = {}

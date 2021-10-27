@@ -9,5 +9,7 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = "__all__"
         widgets = {
-            'eventTime':DateInput(),
+            'Time':DateInput(attrs={'class': 'form-control'}),
+            'Name': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Enter event name'}),
+            'Description': forms.Textarea(attrs={'class': 'form-control', 'placeholder':'Description of the event'}),
         }
