@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'app7_EventApp',
     'crispy_forms',
     #'kuis',
+    'covid_data',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
