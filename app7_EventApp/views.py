@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .models import Event
 from .forms import EventForm
+
 
 # Create your views here.
 def index (request):
@@ -17,8 +18,10 @@ def add_event (request):
         # save the form data to model
         form.save()
         form = EventForm()
+        return HttpResponseRedirect("/EventApp")
 
     context['form']= form
     return render(request, "addEvent.html", context)
+
 
 
