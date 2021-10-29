@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.template import loader
 from .forms import SearchForm
-from .models import SearchedCovidData
+#from .models import SearchedCovidData
 import requests
 
 def covid_data(request):
