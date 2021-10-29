@@ -7,7 +7,7 @@ from .models import SearchedCovidData
 import requests
 
 def covid_data(request):
-    searched_data = SearchedCovidData.objects.all()
+    #searched_data = SearchedCovidData.objects.all()
     form = SearchForm(request.POST)
     response = requests.get('https://api.kawalcorona.com/indonesia/provinsi')
     data = response.json()

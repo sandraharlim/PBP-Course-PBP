@@ -50,26 +50,7 @@
                 }
             })
         });
-        $("#search-form").submit(function(e){
-            e.preventDefault();
-            $("#initial-visible").fadeOut();
-            var search_key = $("#provinsi").find(":selected").val();
-            console.log(search_key);
-            $.ajax({
-                url: "{% url 'search' %}",
-                method: 'GET',
-                data : {'search':search_key},
-                success: function(data){
-                    $('#data-table').append(
-                       data['data_html']
-                    )
-                },
-                error: function(error_data){
-                    console.log("error")
-                    console.log(error_data)
-                }
-            })
-        });
+       
     } );
 </script>
 {% endblock content %}
