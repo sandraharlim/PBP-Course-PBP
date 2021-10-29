@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'to_do_list',
     'crispy_forms',
     #'kuis',
+    'covid_data',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

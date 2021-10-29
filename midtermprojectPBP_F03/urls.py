@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('to-do-list/', include('to_do_list.urls')),
+    #path('kuis/', include('kuis.urls')),
+    path('covid-data/', include('covid_data.urls')),
 ]

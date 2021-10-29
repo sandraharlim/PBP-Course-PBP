@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>Menampilkan Sebaran Data Covid-19 menggunakan Django Dan API Kawal Corona</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>	
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="{% static 'css/covid_data/covid_data.css' %}">
+{% endblock meta %}
+
+{% block content %}
+<h1 class="page-title">Menampilkan Sebaran Data Covid-19 menggunakan Django Dan API Kawal Corona</h1>
+<br/>
+<br/>
+<div class="container" id="data-table">
+    
+</div>
+<div class="fluid-container" id="initial-visible">
+    <form method="POST" id="search-form">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Search" id="search-button">
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script>
+     $(document).ready(function() {
+        $("#id_provinsi").prepend('<option value="" disabled selected hidden>Pilih Provinsi...</option>')
+        $("#search-button").click(function(e){
+            e.preventDefault();
+            $("#initial-visible").fadeOut();
+            var search_key = $("#id_provinsi").find(":selected").val();
+            $.ajax({
+                url: "{% url 'search' %}",
+                method: 'GET',
+                data : {'search':search_key},
+                success: function(data){
+                    console.log("success");
+                    $('#data-table').append(
+                       data['data_html']
+                    )
+                },
+                error: function(error_data){
+                    console.log("error")
+                    console.log(error_data)
+                }
+            })
+        });
+        $("#search-form").submit(function(e){
+            e.preventDefault();
+            $("#initial-visible").fadeOut();
+            var search_key = $("#provinsi").find(":selected").val();
+            console.log(search_key);
+            $.ajax({
+                url: "{% url 'search' %}",
+                method: 'GET',
+                data : {'search':search_key},
+                success: function(data){
+                    $('#data-table').append(
+                       data['data_html']
+                    )
+                },
+                error: function(error_data){
+                    console.log("error")
+                    console.log(error_data)
+                }
+            })
+        });
+    } );
+</script>
+{% endblock content %}
