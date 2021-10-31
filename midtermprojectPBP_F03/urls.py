@@ -22,4 +22,5 @@ urlpatterns = [
     path('to-do-list/', include('to_do_list.urls')),
     #path('kuis/', include('kuis.urls')),
     path('covid-data/', include('covid_data.urls')),
+    path('add-forum/', include('forum.urls')),
 ]
