@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{% include "base.html" %}
+    <center>
+        <head>
+            <title>Menambahkan Jadwal Mata Kuliah</title>
+        </head>
+        <body>
+            <h1>Add Schedule</h1>
+            <br/>
+            <form action = "" method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <!-- <td>{{form.name.label}}{{form.name}}</td> -->
+                        <td>
+                            <label>Name: </label>
+                            <input type="text", placeholder="Masukan Nama Matkul", class="form-control name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{form.day.label}}{{form.day}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.start_time.label}}{{form.start_time}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{form.end_time.label}}{{form.end_time}}</td>
+                    </tr>
+                </table>
+                <input type="submit" value="Add jadwal matkul" name="submit">
+            </form>
+            <a class="activate" href="/app-1">Schedule</a>
+            <br/>
+            <a class="activate" href="/app-1/matkul-list">List Matkul</a>    
+        </body>
+    </center>
+</html>
