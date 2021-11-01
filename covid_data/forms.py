@@ -1,0 +1,36 @@
+from django import forms
+PROVINSI_LIST= [
+    ('DKI Jakarta', 'DKI Jakarta'),
+    ('Jawa Barat', 'Jawa Barat'),
+    ('Jawa Timur', 'Jawa Timur'),
+    ('Kalimantan Timur', 'Kalimantan Timur'),
+    ('Sulawesi Selatan', 'Sulawesi Selatan'),
+    ('Banten', 'Banten'),
+    ('Bali', 'Bali'),
+    ('Riau', 'Riau'),
+    ('Daerah Istimewa Yogyakarta', 'Daerah Istimewa Yogyakarta'),
+    ('Sumatera Barat', 'Sumatera Barat'),
+    ('Kalimantan Selatan', 'Kalimantan Selatan'),
+    ('Sumatera Utara', 'Sumatera Utara'),
+    ('Papua', 'Papua'),
+    ('Sumatera Selatan', 'Sumatera Selatan'),
+    ('Kalimantan Tengah', 'Kalimantan Tengah'),
+    ('Sulawesi Utara', 'Sulawesi Utara'),
+    ('Nusa Tenggara Timur', 'Nusa Tenggara Timur'),
+    ('Bangka Belitung', 'Bangka Belitung'),
+    ('Lampung', 'Lampung'),
+    ('Aceh', 'Aceh'),
+    ('Sulawesi Tenggara', 'Sulawesi Tenggara'),
+    ('Kepulauan Riau', 'Kepulauan Riau'),
+    ('Papua Barat', 'Papua Barat'),
+    ('Maluku', 'Maluku'),
+    ('Kalimantan Barat', 'Kalimantan Barat'),
+    ('Jambi', 'Jambi'),
+    ('Bengkulu', 'Bengkulu'),
+    ('Sulawesi Barat', 'Sulawesi Barat'),
+    ('Gorontalo', 'Gorontalo'),
+    ('Maluku Utara', 'Maluku Utara'),
+    ]
+
+class SearchForm(forms.Form):
+    provinsi = forms.CharField(label='Pilih Provinsi', widget=forms.Select(choices=PROVINSI_LIST))

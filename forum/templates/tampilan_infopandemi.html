@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <style>
+      p {
+        font-weight: normal;
+      }
+      .card-text#tag {
+        font-weight: bold;
+      }
+      .card-text {
+        line-height: 1.6;
+        font-size: small;
+      }
+    </style>
+    <div class="container">
+      <div class="row row-cols-3 row-cols-md-3">
+        {% for x in forum %}
+        <div class="card border-1">
+          <div class="card-header bg-light">
+            <h5>{{x.nama}}</h5>
+          </div> 
+          <div class="card-body" style="background-color: aliceblue;">
+            <p class="card-text">
+              saya seorang {{x.pekerjaan}} dan saya ingin mengatakan,<br>
+              "{{x.konten}}"
+            </p>
+            <p id="tag" class="card-text">#infopandeminigan</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+</html>
+
