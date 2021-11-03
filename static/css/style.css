@@ -1,15 +1,22 @@
 /* Project-wide style */
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: aliceblue;
 }
 
 .bg-custom{
+<<<<<<< HEAD
   background-color:#5B9EA6;
+=======
+  background-color:cadetblue;
+>>>>>>> a1e0c9e1aa87c2b4b8c4e4362d197e752f2beb5f
 }
+
 .navbar-nav a:hover{
+<<<<<<< HEAD
   background-color: #EBF0F2;
 }
 .tombol-kanan{
@@ -24,4 +31,15 @@ body {
   background-color: cadetblue;
   color: black; 
   text-decoration: none;
+=======
+  background-color: white;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-image:none !important;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: aliceblue;
+>>>>>>> a1e0c9e1aa87c2b4b8c4e4362d197e752f2beb5f
 }

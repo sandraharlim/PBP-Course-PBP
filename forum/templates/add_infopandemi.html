@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    {%include 'base.html'%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+    <h1><span>Bagikan Info Pandemi Yang Kamu Tahu!</span></h1>
+    <p class="waktuTanggal">
+        Your Local Date and Time:<br><span id='date-time'></span>
+    </p>
+    <script>
+        var dt = new Date();
+        document.getElementById('date-time').innerHTML=dt;
+    </script>
+    <style>
+        h1:hover span {
+            display: none;
+        }
+        h1:hover:before {
+            content: "Terima Kasih Atas Infonya!";
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 20px;
+        }
+        .tombol {
+            border-radius: 20px; 
+            border: 1.5px solid black; 
+            transition-duration: 0.2s;
+        }
+        .tombol:hover {
+            color: white;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        .Ketik {
+            text-align: center; 
+            font-weight: bold; 
+            font-family: 'Poppins', sans-serif;
+        }
+        .waktuTanggal {
+            text-align: center; 
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            font-size: large;
+            padding-top: 5px;
+        }
+        p {
+            font-weight: 900;
+            font-family: 'Poppins', sans-serif;
+            font-size: large;
+        }
+        .form-group {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        button#buttonsearch:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            color: white;
+        }
+        .viewCerita > * {
+            display:inline-block;
+            vertical-align:middle;
+            background-color:lightgreen;
+        }
+        a {
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        a:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        .previous {
+            border: 1.5px solid black; 
+            transition-duration: 0.2s;
+            width: 130px;
+            height: fit-content;
+        }
+        .previous#buttonprev:hover {
+            color: white;
+        }
+        .round {
+            border-radius: 20px; 
+        }
+    </style>
+    <body style="background-color: aliceblue;">
+        <div class="container">
+            <div class="form-group">
+                <form action="" method=POST id="iniform">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <a id="buttonprev" href="button" class="previous round" style="width: 130px; background-color: powderblue; color: black; text-decoration: none; font-size: smaller;">&#8249</a>
+                    <input class="tombol" type="submit" value="Add Forum" style="width: 130px; background-color: powderblue;">
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        const form = document.getElementById('iniform');
+        form.addEventListener("submit", submitMessage);
+
+        function submitMessage(e) {
+            e.preventDefault();
+            $.ajax({
+                type        : 'POST',
+                url         : "{% url 'add_info_pandemi' %}",
+                data        : $('#iniform').serialize(),
+                dataType    : 'json',
+                success     : successSubmit
+            });
+        }
+
+        function successSubmit(data) {
+        if (data.message === 'success') {
+            alert('Berhasil ditambahkan!');
+            form.reset()
+            }
+        }
+    </script>
+    <p class="Ketik">
+        Ketik sebuah nama untuk mencari forum yang telah dibagikannya!
+    </p>
+    <div class="form-group">
+        <form action="/add-forum/search_info_pandemi" class="buttonsearch">
+            <input name='kotak_cari' type="text" class="form-control" placeholder="Cari sebuah nama..." style="width: 300px; margin: 0 auto; border: 0.1px solid black;">
+            <button id="buttonsearch" type="submit" style="text-align: center; margin: auto; display: flex; display: grid; 
+            margin-top: 10px; border-radius: 20px; transition-duration: 0.2s; width: 130px; background-color: powderblue;
+            ">Search</button>    
+        </form>
+    </div>
+    {% include 'tampilan_infopandemi.html' %}
+</html>

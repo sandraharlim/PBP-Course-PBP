@@ -23,4 +23,5 @@ urlpatterns = [
     path('EventApp/', include('app7_EventApp.urls')),
     #path('kuis/', include('kuis.urls')),
     path('covid-data/', include('covid_data.urls')),
+    path('add-forum/', include('forum.urls')),
 ]
