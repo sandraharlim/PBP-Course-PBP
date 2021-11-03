@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    {% include 'base.html' %}
+    <head>
+        {% url 'event' as AddEvent %}
+        {% url 'Update' as Update%}
+    </head>
+    <body style="padding-bottom: 100px; " class="bg-light">
+    <div class = "container">
+        {% for data in dataset %}  
+        <div class = "card" style="width: 20rem;">
+         <div class="card-body"> 
+            <h5 class="card-title">{{ data.Name }}</h5> 
+            <h6 class="card-subtitle mb-2 text-muted">{{ data.Time }}</h6>
+            <p class="card-text">{{data.Description}}</p><br/> 
+            <a class = "btn btn-primary tombol-kanan" href="{{data.id}}/UpdateEvent">Edit</a>
+            <a class = "btn btn-primary tombol-kanan" href="{{data.id}}/DeleteEvent">Delete</a>
+            </div>
+            </div>
+        {% endfor %}
+        <a class = "tombol-kanan" style="padding-top: 20 px" href = {{AddEvent}}>Add Event</a>
+    </div>
+    {% comment %} </div> {% endcomment %}
+    </body>
+
+</html>

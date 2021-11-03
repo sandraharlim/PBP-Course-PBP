@@ -4,7 +4,7 @@ from django.core import serializers
 from django.template import loader
 from .forms import SearchForm
 from .models import SearchedCovidData
-import requests
+#import request
 
 def covid_data(request):
     searched_data = SearchedCovidData.objects.all()

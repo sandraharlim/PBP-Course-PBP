@@ -3,6 +3,7 @@
 <html>
 {% include "base.html" %}
 {% url 'event' as AddEvent %}
+{% url 'Manage' as ManageEvent%}
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
@@ -33,7 +34,7 @@
     </table>
     </div>
     <div>
-        <a href = {{AddEvent}}>Add Event</a>
+        <a class="btn btn-primary" href={{ManageEvent}}>Manage Event</a>
     </div>
     
 

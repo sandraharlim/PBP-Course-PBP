@@ -7,8 +7,21 @@ body {
 }
 
 .bg-custom{
-  background-color:aquamarine;
+  background-color:#5B9EA6;
 }
 .navbar-nav a:hover{
-  background-color:rgba(1, 255, 149, 0.712);
+  background-color: #EBF0F2;
+}
+.tombol-kanan{
+  text-align: center ;
+  margin-left:auto;
+  margin-right:0; 
+  display: flex;
+  display: grid; 
+  margin-top: 10px; 
+  border-radius: 20px; 
+  width: 130px; 
+  background-color: cadetblue;
+  color: black; 
+  text-decoration: none;
 }

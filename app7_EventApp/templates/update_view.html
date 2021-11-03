@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    {% include 'base.html' %}
+    <body>
+        <div class="container">
+    <!-- Create a Form -->
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <!-- form as paragraph -->
+        {{ form.as_p }}
+ 
+        <input type="submit" value="Save">
+    </form>
+ 
+</div>
+    </body>
+</html>
