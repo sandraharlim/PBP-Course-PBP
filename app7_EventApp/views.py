@@ -18,6 +18,7 @@ def add_event (request):
 
     if form.is_valid():
         # save the form data to model
+        
         form.save()
         form = EventForm()
         return HttpResponseRedirect("/EventApp")

@@ -49,7 +49,7 @@ Mungkin akan ada artikel tentang prokes<br>
 Mini games covid (Arcade), masih tentative<br>
 
 
-6. Live Chart Covid Dunia dan Indonesia dengan News Terkini.<br>
+6. Data penyebaran Covid di Indonesia<br>
 
 7. App scheduling biasa<br>
 Pengguna dapat menambahkan **event** seperti jadwal rapat, hari ulang tahun, ataupun reminder, yang kemudian akan ditampilkan dalam bentuk **calender** (seperti app 1, tetapi tidak eksklusif untuk **student**)
