@@ -8,7 +8,7 @@ from .models import SearchedCovidData
 
 
 def covid_data(request):
-    searched_data = SearchedCovidData.objects.all().values()
+    searched_data = SearchedCovidData.objects.all().order_by('-id')
     form = SearchForm(request.POST or None)
     response = requests.get('https://data.covid19.go.id/public/api/prov_list.json')
     try:
@@ -17,11 +17,6 @@ def covid_data(request):
         data = None
     kasus = []
     error = None
-    searched_provinsi = None
-    if request.user.is_authenticated:
-        if request.method == 'POST':
-            if form.is_valid():
-                searched_provinsi = form.cleaned_data['provinsi']
     if data is not None:
         for o in data['list_data']:
             datanya = {}
@@ -29,10 +24,6 @@ def covid_data(request):
             datanya['kasus_positif'] = o['status']['buckets'][2]['doc_count']
             datanya['kasus_sembuh'] = o['status']['buckets'][0]['doc_count']
             datanya['kasus_meninggal'] = o['status']['buckets'][1]['doc_count']
-            if searched_provinsi != None:
-                if datanya['provinsi'] in searched_provinsi:
-                    new = SearchedCovidData(user = request.user,provinsi=datanya['provinsi'], kasus_positif=datanya['kasus_positif'],kasus_sembuh=datanya['kasus_sembuh'],kasus_meninggal=datanya['kasus_meninggal'])
-                    new.save()
             kasus.append(datanya)
     else:
         error = "Maaf sumber data yang kami pakai sedang bermasalah"
@@ -64,7 +55,7 @@ def search(request):
         
         data_html = loader.render_to_string(
             'data.html',
-            {'data': kasus, 'search_key': search_key}
+            {'data': kasus, 'search_key': search_key, 'date':data['last_date'],}
         )
         output_data = {
             'data_html': data_html,

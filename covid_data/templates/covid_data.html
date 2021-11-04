@@ -13,7 +13,8 @@
 
 {% block content %}
 <h1 class="page-title">Data Sebaran Covid-19 di Indonesia</h1><br>
-<h4 class="page-title">Data provided by kawalkorona API</h4>
+<h4 class="page-title">Data provided by data.covid19.go.id API</h4>
+<h6 class="page-title">last updated : {{date}}</h6>
 <br/>
 <br/>
 <div class="container" id="data-table">
@@ -52,7 +53,7 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
+        </div>
     {% endif %}
 {% else %}
     <h1>{{error}}</h1>
