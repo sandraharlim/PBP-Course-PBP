@@ -21,6 +21,7 @@ urlpatterns = [
     path('', include('main.urls')),
     path('to-do-list/', include('to_do_list.urls')),
     path('info-pendidikan/', include('info_pendidikan.urls')),
+    path('EventApp/', include('app7_EventApp.urls')),
     #path('kuis/', include('kuis.urls')),
     path('covid-data/', include('covid_data.urls')),
     path('add-forum/', include('forum.urls')),

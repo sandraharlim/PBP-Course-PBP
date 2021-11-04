@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+{% include "base.html" %}
+{% url 'event' as AddEvent %}
+{% url 'Manage' as ManageEvent%}
+<head>
+</head>
+<style>
+body {
+  /* Set "my-sec-counter" to 0 */
+  counter-reset: my-sec-counter;
+}
+
+#numbering::before {
+  /* Increment "my-sec-counter" by 1 */
+  counter-increment: my-sec-counter;
+  content: counter(my-sec-counter);
+  text-align: center;
+}
+</style>
+<body>
+    <div class="container">
+    <table class ="table table-bordered border-primary" style="margin-top: 10px">
+        <tr>
+            <th scope="row">No</th>
+            <th scope="col">Event</th>
+            <th scope="col">Time</th>
+            <th scope="col">Description</th>
+        </tr>
+    {% if event %}
+        {% for x in event %}
+        <tr>
+            <td scope="col" id="numbering"></td>
+            <td>{{ x.Name }}</td>
+            <td>{{ x.Time}} </td>
+            <td>{{ x.Description }}</td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+        <a class="tombol-tengah tombol"style="padding: 3px;" href={{ManageEvent}}>Manage Event<a>
+    </div>
+    <script>
+    </script>
+</body>
+</html>
+
