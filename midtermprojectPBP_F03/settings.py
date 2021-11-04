@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     #'kuis',
     'covid_data',
     'forum',
+    'info_pendidikan',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
