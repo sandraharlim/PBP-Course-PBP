@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'to_do_list',
+    'app7_EventApp',
     'crispy_forms',
     #'kuis',
     'covid_data',

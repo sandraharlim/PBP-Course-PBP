@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+{% url 'EventApp' as Scheduler %}
 
 <head>
   <meta charset="UTF-8">
@@ -55,7 +56,7 @@
               <a class="dropdown-item" href="/add-forum/" style="color: black;">Pandemic Forum</a>
               <a class="dropdown-item" href="" style="color: black;">QuizOfPandemic</a>
               <a class="dropdown-item" href="/covid-data/" style="color: black;">COVID19 Data</a>
-              <a class="dropdown-item" href="" style="color: black;">Scheduler</a>
+              <a class="dropdown-item" href="{{Scheduler}}" style="color: black;">Scheduler</a>
             </div>
           </li>
         </ul>
