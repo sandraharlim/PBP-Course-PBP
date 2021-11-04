@@ -3,13 +3,8 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.template import loader
 from .forms import SearchForm
-<<<<<<< HEAD
-from .models import SearchedCovidData
-#import request
-=======
 #from .models import SearchedCovidData
 
->>>>>>> a1e0c9e1aa87c2b4b8c4e4362d197e752f2beb5f
 
 def covid_data(request):
     #searched_data = SearchedCovidData.objects.all()

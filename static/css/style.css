@@ -8,30 +8,10 @@ body {
 }
 
 .bg-custom{
-<<<<<<< HEAD
-  background-color:#5B9EA6;
-=======
   background-color:cadetblue;
->>>>>>> a1e0c9e1aa87c2b4b8c4e4362d197e752f2beb5f
 }
 
 .navbar-nav a:hover{
-<<<<<<< HEAD
-  background-color: #EBF0F2;
-}
-.tombol-kanan{
-  text-align: center ;
-  margin-left:auto;
-  margin-right:0; 
-  display: flex;
-  display: grid; 
-  margin-top: 10px; 
-  border-radius: 20px; 
-  width: 130px; 
-  background-color: cadetblue;
-  color: black; 
-  text-decoration: none;
-=======
   background-color: white;
 }
 
@@ -41,5 +21,58 @@ body {
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   background-color: aliceblue;
->>>>>>> a1e0c9e1aa87c2b4b8c4e4362d197e752f2beb5f
+}
+
+.tombol-kanan{
+  text-align: center ;
+  margin-left:auto;
+  margin-right:0; 
+  display: flex;
+  display: grid; 
+  margin-top: 10px; 
+  border-radius: 20px; 
+  width: 130px; 
+  background-color: powderblue;
+  color: black; 
+  text-decoration: none; 
+}
+
+.tombol-tengah{
+  text-align: center ;
+  margin-left:0;
+  margin-right:0; 
+  display: flex;
+  display: grid; 
+  margin-top: 10px; 
+  border-radius: 20px; 
+  width: 130px; 
+  background-color: powderblue;
+  color: black; 
+  text-decoration: none; 
+}
+
+.tombol-kiri{
+  text-align: center ;
+  margin-left:auto;
+  margin-right:0; 
+  display: flex;
+  display: grid; 
+  margin-top: 10px; 
+  border-radius: 20px; 
+  width: 130px; 
+  background-color: powderblue;
+  color: black; 
+  text-decoration: none; 
+
+}
+.tombol:hover {
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration: none;
+}
+.tombol {
+  border-radius: 20px; 
+  border: 1.5px solid black; 
+  transition-duration: 0.2s;
+  width: 130px;
 }
