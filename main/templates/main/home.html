@@ -2,6 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {%block content%}
+{% url 'EventApp' as Scheduler %}
 
 
   <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -101,7 +102,7 @@
   <div class="container judul-div" style="text-align: center; margin-top: 20px;">
     <div class="row">
       <div id="kiri" class="col-sm" style="background-color: cadetblue;">
-        <a href="" style="text-decoration: none; color: black;"><div class= "nama-fitur tua">Forum Pandemi</div></a> 
+        <a href="/add-forum" class="nama-fitur tua" style="text-decoration: none; color: black;">Forum Pandemi</a> 
       </div>
       <div id="kanan" class="col-sm" style="background-color: powderblue;">
         <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur muda">Covid-19 Data</div></a>
@@ -120,7 +121,7 @@
         <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur muda">Pandemic Quiz</div></a> 
       </div>
       <div id="kanan" class="col-sm" style="background-color: powderblue;">
-        <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Scheduler</div></a>
+        <a href="{{Scheduler}}" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Scheduler</div></a>
       </div>
     </div>
   </div>
