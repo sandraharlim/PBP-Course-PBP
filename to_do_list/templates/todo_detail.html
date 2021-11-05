@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>To Do Item</title>
+        {% include 'base.html' %}
+    </head>
+    <body>
+        <div class="container">
+            <form method="POST">
+                {% csrf_token %}
+                <label for="t" class="row">To do</label>
+                <p id="t">{{form.title}}</p>
+                <label for="d" class="row">Description</label>
+                <p id="d">{{form.description}}</p>
+                <label for="c" class="row">Done</label>
+                <p id="c">{{form.is_completed}}</p>
+                <input type="submit", value="Save">
+            </form>
+        </div>
+    </body>
+</html>

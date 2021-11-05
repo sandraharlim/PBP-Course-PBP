@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import item_detail, item_list
+from .views import todo_index, todo_detail, todo_delete
 
 urlpatterns = [
-    path('', item_list, name='item_list'),
-    path('item_detail/<str:pk>', item_detail, name='item_detail'),
+    path('', todo_index, name='index'),
+    path('todo-delete/', todo_delete, name='todo_delete'),
+    path('<id>/todo-detail/', todo_detail, name='todo_detail'),
 ]
