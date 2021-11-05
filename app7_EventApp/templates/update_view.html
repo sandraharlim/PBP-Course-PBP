@@ -7,12 +7,16 @@
                 <div class="col-3">
                 </div>
                    <div class="col-6">
+                   {% if user.id == object.author_id %}
                     <form action="" method=POST>
                         {{ form.as_table }}
                         {%csrf_token%}
                         <input type="submit" class="tombol-kanan tombol" value="Save"> 
                         <a class="tombol-kanan tombol" href="/EventApp">Back</a>         
                     </form>
+                    {% else %}
+                        <h2>Nice Try Kak AsDos Namun Tidak Hari Ini</h2>
+                    {%endif%}    
                 </div>
 
                 </div>
