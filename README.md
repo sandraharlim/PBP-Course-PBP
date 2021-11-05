@@ -47,8 +47,7 @@ Halaman ini menampilkan statistik kasus Covid di provinsi-provinsi di Indonesia.
 
 ### Template repo disediakan oleh : https://github.com/laymonage/django-template-heroku
 
-[actions-badge]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/workflows/Test%20and%20Deploy/badge.svg
-[commits-gh]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/commits/master
+
 [pipeline-badge]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/badges/master/pipeline.svg
 [coverage-badge]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/badges/master/coverage.svg
 [commits-gl]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/-/commits/master
