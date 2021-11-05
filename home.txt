@@ -2,9 +2,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {%block content%}
-{% url 'EventApp' as Scheduler %}
-{% url 'info_pendidikan' as info_pendidikan %}
-{% url 'index' as to-do-list %}
 
 
   <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -129,7 +126,7 @@
     </div>
     <div class="row">
       <div id="kiri" class="col-sm" style="background-color: powderblue;">
-        <a href="{%url 'index' %}" style="text-decoration: none; color: black;"><div class="nama-fitur muda">To-do List</div></a> 
+        <a href="{%url 'item_list' %}" style="text-decoration: none; color: black;"><div class="nama-fitur muda">To-do List</div></a> 
       </div>
       <div id="kanan" class="col-sm" style="background-color: cadetblue;">
         <a href="{%url 'info_pendidikan' %}" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Recent Education</div></a>
@@ -137,7 +134,7 @@
     </div>
     <div class="row">
       <div id="kiri" class="col-sm" style="background-color: cadetblue;">
-        <a href="{%url 'quizes:main-view' %}" style="text-decoration: none; color: black;"><div class="nama-fitur muda">Pandemic Quiz</div></a> 
+        <a href="{%url 'button' %}" style="text-decoration: none; color: black;"><div class="nama-fitur muda">Pandemic Quiz</div></a> 
       </div>
       <div id="kanan" class="col-sm" style="background-color: powderblue;">
         <a href="{%url 'EventApp' %}" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Scheduler</div></a>
@@ -151,8 +148,8 @@
     <p>mulai mengorganisir jadwal kamu,<br>
         hidup teratur bagai papan catur, <br>
         blablabla.</p>
-        <a href="{%url 'schedule' %}" class=link><p id="klik-donasi" >klik untuk susun jadwal</p></a>
-      </div>
+    <a href="{%url 'schedule' %}" class=link><p id="klik-donasi" >klik untuk susun jadwal</p></a>
+</div>
 <p style="font-weight: bold; margin: 25px auto; text-align: center; font-size: x-large;">Bersama Kita Jadi Lebih Produktif!</p>
 
 {%endblock%}
