@@ -17,48 +17,39 @@ https://pbp-midtermproject-f03.herokuapp.com
 
 ## Cerita singkat aplikasi :
 **Pandemic Based Productivity (PBP)**<br>
-Website ini dibuat untuk membantu pengguna menghadapi budaya-budaya baru saat pandemi seperti PJJ, WFJ, SFH, dan Prokes. Di dalam website ini terdapat fitur berita terkini terkait pandemi seperti tingkat kesembuhan, perkembangan vaksin, dan aturan baru. Untuk mendukung pengguna saling bertukar informasi, kami juga menyiapkan ruang diskusi berupa forum yang dapat diposting oleh pengguna. Terdapat quiz interaktif seputar protokol kesehatan dalam masa pandemi untuk mendukung pengguna menerapkan prokes.
-
-Khusus user dengan status murid, kami menyediakan fitur susun jadwal kegiatan belajar serta deadline tugas dan ujian. Diharapkan fitur ini membantu murid untuk menghadapi PJJ.
+Website ini dibuat untuk membantu pengguna menghadapi budaya-budaya baru saat pandemi seperti PJJ, WFJ, SFH, dan Prokes. Di dalam website ini terdapat fitur berita terkini terkait pandemi seperti tingkat kesembuhan, perkembangan vaksin, dan aturan baru. Untuk mendukung pengguna saling bertukar informasi, kami juga menyiapkan halaman khusus berupa forum yang dapat diposting oleh pengguna. Terdapat quiz interaktif seputar protokol kesehatan dalam masa pandemi untuk mendukung pengguna menerapkan protokol kesehatan.
 
 ## Persona : 
-- Guest (akses cuma bisa liat berita, pokonya yg ga perlu input-input)
-- User non student (bisa input-input, tetapi tidak bisa memakai fitur jadwal kuliah/sekolah pada modul scheduling)
-- User student (bisa input-input, bisa scheduling juga)
-- Admin
+- User : bisa mengakses seluruh modul
+- Non-User/belum login : bisa mengakses beberapa modul saja
 
 ## Daftar modul :
-1. App perencanaan kuliah (PJJ)<br>
-Pengguna **student** dapat menambahkan jadwal kuliah/sekolah, tanggal Ujian, ataupun deadline tugas. Kemudian hal ini akan ditampilkan dalam bentuk **calender**<br>
+1. App susun jadwal mata kuliah<br>
+Pengguna dapat menambahkan jadwal mata kuliah. Kemudian hal ini akan ditampilkan di dalam card sesuai dengan hari matkul tersebut berlangsung. Terdapat 5 card sesuai dengan 5 hari kuliah, yaitu Senin, Selasa, Rabu, Kamis. App ini menerima input nama matkul, hari berlangsungnya matkul, waktu matkul berlangsung, waktu matkul berakhir. Apabila nama mata kuliah telah ditambahkan, maka tidak dapat menambahkan matkul itu lagi. <br>
 
-2. To-do list<br>
-to-do list biasa.<br>
+2. App scheduling biasa<br>
+Pengguna dapat menambahkan **event** seperti jadwal rapat, hari ulang tahun, ataupun reminder, yang kemudian akan ditampilkan dalam bentuk **card**yang tersusun berdasarkan tanggal.
 
-3. Info terkini terkait pendidikan<br>
-Bisa di connect lewat api suatu website gitu, nanti ada pilihan berita apa aja yg mau diliat, nnt kaya pake card misalnya headline nya ada di depan, sama author+tanggal mungkin, kaya line today.
+3. To-do list<br>
+Pengguna dapat mencatat hal-hal yang perlu dilakukannya, serta dapat menulis deskripsinya. Jika sudah selesai, pengguna dapat memberikan checklist sebagai tanda sudah selesai.<br>
 
-4. Forum tentang pandemi<br>
-Dalam forum user bisa membuat diskusi baru dan memposting pendapatnya
-(mirip seperti stack overflow cuman versi pandemi)<br>
-Kategorinya ada 3 : tips kesehatan, informasi pandemi (tentang covid, wfh, dll,), pertanyaan2 
+4. Info terkini terkait pendidikan<br>
+Halaman ini menampilkan kumpulan berita terbaru di bidang pendidikan. Pengguna dapat membaca deskripsi singkat mengenai berita tersebut dan mengklik tombol ‘More’ untuk membaca berita lengkapnya di website terkait. Selain itu, pengguna yang sudah login dapat menulis dan menambahkan artikel pendidikan yang ditulis sendiri ke dalam halaman ini.<br>
 
-5. Quiz: Seberapa siapkah anda menghadapi pandemi covid-19?<br>
-Akan ada quiz seputar prokes dalam  pandemi covid-19 <br>
-Ada leaderboard hasil quiz<br>
-Mungkin akan ada artikel tentang prokes<br>
-Mini games covid (Arcade), masih tentative<br>
+5. Forum tentang pandemi<br>
+Halaman untuk menambahkan forum, dengan ada 3 kategori berbeda (info pandemi, tips kesehatan, dan curhat) dan bisa bebas dipilih oleh user yang sudah login.
 
+6. Quiz: Seberapa siapkah anda menghadapi pandemi covid-19?<br>
+Halaman ini berisi quiz seputar protokol kesehatan dalam pandemi Covid-19, serta ada leaderboard untuk menampilkan perolehan poin hasil quiz.
 
-6. Data penyebaran Covid di Indonesia<br>
+7. Covid Data di Indonesia.<br>
+Halaman ini menampilkan statistik kasus Covid di provinsi-provinsi di Indonesia.
 
-7. App scheduling biasa<br>
-Pengguna dapat menambahkan **event** seperti jadwal rapat, hari ulang tahun, ataupun reminder, yang kemudian akan ditampilkan dalam bentuk **calender** (seperti app 1, tetapi tidak eksklusif untuk **student**)
 
 ### Template repo disediakan oleh : https://github.com/laymonage/django-template-heroku
 
-[actions-badge]: https://github.com/laymonage/django-template-heroku/workflows/Test%20and%20Deploy/badge.svg
-[commits-gh]: https://github.com/laymonage/django-template-heroku/commits/master
-[pipeline-badge]: https://gitlab.com/laymonage/django-template-heroku/badges/master/pipeline.svg
-[coverage-badge]: https://gitlab.com/laymonage/django-template-heroku/badges/master/coverage.svg
-[commits-gl]: https://gitlab.com/laymonage/django-template-heroku/-/commits/master
-
+[actions-badge]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/workflows/Test%20and%20Deploy/badge.svg
+[commits-gh]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/commits/master
+[pipeline-badge]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/badges/master/pipeline.svg
+[coverage-badge]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/badges/master/coverage.svg
+[commits-gl]: https://gitlab.com/johanes.raka/pbp-midterm-project-f03/-/commits/master
