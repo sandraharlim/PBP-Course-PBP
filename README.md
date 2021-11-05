@@ -1,6 +1,5 @@
 # midtermprojectPBP_F03
 
-[![Test and Deploy][actions-badge]][commits-gh]
 [![pipeline status][pipeline-badge]][commits-gl]
 [![coverage report][coverage-badge]][commits-gl]
 ## Anggota Kelompok F03:
