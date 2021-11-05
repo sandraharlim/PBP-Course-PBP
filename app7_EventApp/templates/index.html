@@ -35,7 +35,8 @@ table{
 <body>
     <div class="container">
     <a href= {{AddEvent}} style="float: right; margin-top: 20px">+ Add Event</a>
-    <table id="eventTable" class ="table table-stripped table-hover" style="margin-top: 10px">
+    <div class="table-responsive">
+    <table id="eventTable" class ="table table-stripped table-hover" style="margin-top: 10px; margin-bottom:50px">
         <tr>
             <th scope="row">No</th>
             <th scope="col">Event</th>
@@ -57,7 +58,8 @@ table{
          {% endif %}
         {% endfor %}
     {% endif %}
-    </table>
+        </table>
+        </div>
     </div>
     <script>
         function deleteUser(id) {
