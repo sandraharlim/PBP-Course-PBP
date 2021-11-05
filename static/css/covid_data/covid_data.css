@@ -1,9 +1,16 @@
 #data-table{
     display:block;
+    text-align: center;
+    margin: auto;
 }
 #initial-visible{
     display:block;
+    text-align: center;
+    margin: auto;
 }
 .page-title{
     text-align:center;
+}
+h4{
+    color:rgb(144, 0, 0);
 }

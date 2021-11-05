@@ -3,14 +3,14 @@
         <thead>
             <tr>			
                 <th>Provinsi</th>
-                <th>Kasus Positif</th>
+                <th>Dalam Perawatan</th>
                 <th>Kasus Sembuh</th>
                 <th>Kasus Meninggal</th>
             </tr>
         </thead>
         <tbody>
             {% for covid in data %}
-            {% if covid.provinsi == search_key %}    
+            {% if covid.provinsi in search_key %}    
             <tr>				
                 <td>{{covid.provinsi}}</td>
                 <td>{{covid.kasus_positif}}</td>
@@ -21,7 +21,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <button id ="back-button">Back</button>
+    <button type ="button" class="btn btn-outline-info" id="back-button">Back</button>
 <script>
     $("#back-button").click(function(e){
         location.reload();

@@ -1,10 +1,142 @@
+<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
+{%block content%}
 
-{% block meta %}
-<title>Home</title>
-{% endblock meta %}
 
-{% block content %}
-  <h1>Hello, world!</h1>
-{% endblock content %}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <style>
+    h3 {
+      margin: 20px;
+      text-align: center;
+      font-size: x-large;
+    }
+    h1 {
+      margin: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .pengertian {
+      margin: auto;
+      width: 50%;
+    }
+    #kiri {
+      border-radius: 30px;
+      margin:12px auto;
+      color: white;
+      height: 60px;
+      font-size: 20px;
+      padding-top: 1rem;
+      margin-left: 100px;
+      margin-right: 10px;
+    }
+    #kanan {
+      border-radius: 30px;
+      margin:12px auto;
+      color: white;
+      height: 60px;
+      font-size: 20px;
+      padding-top: 1rem;
+      margin-right: 100px;
+    }
+    #div-donasi {
+      border: 3px;
+      border-style: solid;
+      border-radius: 30px;
+      border-color: #8BA6B9;
+      width: 50%;
+      margin: auto;
+    }
+    #carouselExampleControls {
+      width:640px;
+      height:360px;
+      margin: auto;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+  </style>
+    <div class="pengertian" style="text-align: center;">
+      <h1 class="judul-div">Corona, apa itu?</h1>
+      <p id = "desc-corona">Coronavirus merupakan keluarga besar virus yang menyebabkan penyakit pada manusia dan hewan. Pada manusia biasanya menyebabkan penyakit infeksi saluran pernapasan, 
+        mulai flu biasa hingga penyakit yang serius seperti Middle East Respiratory Syndrome (MERS) 
+        dan Sindrom Pernafasan Akut Berat/ Severe Acute Respiratory Syndrome (SARS).</p>
+      <!-- <img src="{%static 'Corona.png' %}" style="max-width: 60%"> -->
+      <a href="https://www.google.com/search?q=corona&oq=corona&aqs=chrome..69i57j35i39j0i67i433i457j0i67l2j69i60l3.1485j0j7&sourceid=chrome&ie=UTF-8" target="_blank" style="color: #8BA6B9;"><p style="margin-top: 10px;">Find out more</p></a>
+      <h1 class="judul-div">About our website</h1>
+    </div>
+
+  </div>
+  
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <img class=img_protokol src="{%static 'Forum Pandemi.png' %}">
+        </div>
+      </div>
+      
+      <div class="carousel-item">
+        <div class="row">
+          <img class=img_protokol src="{%static 'Forum Pandemi.png' %}">
+        </div>
+      </div>
+<!-- 
+      <div class="carousel-item">
+        <div class="row">
+          <img class=img_protokol src="{%static 'Cuci Tanganmu.png' %}">
+        </div>
+      </div> -->
+      <a class="carousel-control-prev"  href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next"  href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container judul-div" style="text-align: center; margin-top: 20px;">
+    <div class="row">
+      <div id="kiri" class="col-sm" style="background-color: cadetblue;">
+        <a href="" style="text-decoration: none; color: black;"><div class= "nama-fitur tua">Forum Pandemi</div></a> 
+      </div>
+      <div id="kanan" class="col-sm" style="background-color: powderblue;">
+        <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur muda">Covid-19 Data</div></a>
+      </div>
+    </div>
+    <div class="row">
+      <div id="kiri" class="col-sm" style="background-color: powderblue;">
+        <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur muda">To-do List</div></a> 
+      </div>
+      <div id="kanan" class="col-sm" style="background-color: cadetblue;">
+        <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Recent Education</div></a>
+      </div>
+    </div>
+    <div class="row">
+      <div id="kiri" class="col-sm" style="background-color: cadetblue;">
+        <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur muda">Pandemic Quiz</div></a> 
+      </div>
+      <div id="kanan" class="col-sm" style="background-color: powderblue;">
+        <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Scheduler</div></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="div-donasi" style="text-align: center; margin-top: 20px;">
+    <h1 id="judul-donasi">yuk susun jadwal!</h1>
+    <p>mulai mengorganisir jadwal kamu,<br>
+        hidup teratur bagai papan catur, <br>
+        blablabla.</p>
+    <a href="" class=link><p id="klik-donasi" >klik untuk susun jadwal</p></a>
+</div>
+<p style="font-weight: bold; margin: 25px auto; text-align: center; font-size: x-large;">Bersama Kita Jadi Lebih Produktif!</p>
+ <!--        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+<!-- </body> -->
+
+{%endblock%}
