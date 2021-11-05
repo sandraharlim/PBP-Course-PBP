@@ -1,35 +1,38 @@
 from django.http import response
-from django.shortcuts import render, redirect
-from django.http.response import HttpResponse
+from django.shortcuts import get_object_or_404, render, redirect
+from django.http.response import HttpResponse, HttpResponseRedirect, JsonResponse
 from .models import ToDoItem
 from .forms import ToDoForm
 
-# Create your views here.
-
-def item_list(request):
-    items = ToDoItem.objects.all()
+def todo_index(request):
+    todos = ToDoItem.objects.all()
     form = ToDoForm()
 
     if request.method == 'POST':
-        print("masuk 1")
         form = ToDoForm(request.POST)
         if form.is_valid():
-            form.save()
-            print("masuk 2")
-        return redirect('/') # redirect ke halaman ini lagi. tapi kok ga bisa ya?
+            obj = form.save(commit=False)
+            obj.author = request.user
+            obj.save()
+        return redirect('/to-do-list/')
+        
+    context = {'todos':todos, 'form':form}
+    return render(request, 'todo_index.html', context)
 
-    context = {'items':items, 'form':form}
-    return render(request, 'item_list.html', context)
+def todo_detail(request, id):
+    context = {}
+    todo = get_object_or_404(ToDoItem, id=id)
+    form = ToDoForm(request.POST or None, instance=todo)
 
-def item_detail(request, pk): #primary key
-    item = ToDoItem.objects.get(id=pk)
-    form = ToDoForm(instance=item)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/to-do-list/')
+        
+    context['form'] = form
+    return render(request, 'todo_detail.html', context)
 
+def todo_delete(request):
     if request.method == 'POST':
-        form = ToDoForm(request.POST, instance=item)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
-
-    context = {'form':form}
-    return render(request, 'item_detail.html', context)
+        todo_name = request.POST.get('todo_name')
+        ToDoItem.objects.filter(title=todo_name).delete()
+        return JsonResponse({'status':'deleted'})

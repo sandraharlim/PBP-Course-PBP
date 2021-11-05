@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "base.html" %}
+    <head>
+        <meta charset="UTF-8" />
+        <title>Schedule</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+                integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            .card {
+                box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.253);
+                transition: 0.5s;
+                width: 25%;
+                min-height: 300px;
+                background-color: rgb(169, 212, 217); 
+                padding: 15px 0px 15px;
+            }
+
+            .card:hover {
+                box-shadow: 0 5px 10px 0 rgb(35, 31, 65);
+            }
+
+            .container {
+                padding: 3px 12px;
+                color: rgb(55, 102, 107);
+            }
+
+            .wrapper{
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            h1{
+                font-size: 30.em;
+                font-style: bold;
+                text-align: center;
+                color: rgb(10, 98, 107);
+            }
+
+            body{
+                background-color: aliceblue;
+            }
+
+            h4{
+                padding: 15px 0px 15px;
+            }
+
+        </style>
+    </head>
+    <center>
+        <body>
+            <h1><b>Schedule</b></h1>
+            <div class="wrapper">
+                <div class="card">
+                    <div class="container" id="Monday">
+                        <h4><b>Monday</b></h4> 
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container" id="Tuesday">
+                        <h4><b>Tuesday</b></h4> 
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container" id="Wednesday">
+                        <h4><b>Wednesday</b></h4>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container" id="Thursday">
+                        <h4><b>Thursday</b></h4> 
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="container" id="Friday">
+                        <h4><b>Friday</b></h4> 
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="container" style="width: fit-content;">
+                <form action = "" method="POST", id="form">
+                    {% csrf_token %}
+                    <input type="number" id="idUser" value={{user.id}} hidden/>
+                    <label class="matkul_name">Name: </label>
+                    <input type="text" class="form-control" id="nama_matkul" placeholder="Masukan nama matkul" required>
+                    <label class="matkul_day">Day: </label>
+                    <br/>
+                    <select name="days" id="days">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                    </select>
+                    <br/>
+                    <label class="start_time_matkul">Start Time: </label>
+                    <input type="time" class="form-control" id="start_time_matkul" required>
+                    <label class="end_time_matkul">End Time: </label>
+                    <input type="time" class="form-control" id="end_time_matkul" required>
+                    <br/>
+                    <input type="submit" class="btn btn-success" id="btnadd" value="Add jadwal matkul"/>
+                </form>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+                    crossorigin="anonymous"></script>
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+                    crossorigin="anonymous">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+                    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+                    crossorigin="anonymous">
+            </script>
+            <!-- Referensi : https://dontrepeatyourself.org/post/django-todo-app-with-ajax-and-jquery/ -->
+            <script>
+                $(document).ready(function(){
+                    var userId = $('#idUser').val()
+                    console.log(userId)
+                    // send a GET request to build the list of todos
+                    $.ajax({
+                        url: '/susun-jadwal-matkul/matkul-list/',
+                        type: 'GET',
+                        dataType: 'json',
+                    })
+                    .done(function(response) {
+                        for (var i in response.matkul) {
+                            if (response.matkul[i].author_id == userId){
+                                console.log(response.matkul[i].author_id)
+                                var hari_matkul = `<span>${response.matkul[i].day}</span>`
+                                var nama_matkul = `<span>${response.matkul[i].name}</span>`
+                                var start_time_matkul = `<span>${response.matkul[i].start_time}</span>`
+                                var end_time_matkul = `<span>${response.matkul[i].end_time}</span>`
+
+                                var temp = `
+                                <p>
+                                    ${start_time_matkul} - ${end_time_matkul} | ${nama_matkul}
+                                </p>
+                                `
+                                // append the new item to the <div> tag
+                                if (response.matkul[i].day == "Monday"){
+                                    $('#Monday').append(temp)
+                                } else if(response.matkul[i].day == "Tuesday"){
+                                    $('#Tuesday').append(temp)
+                                } else if(response.matkul[i].day == "Wednesday"){
+                                    $('#Wednesday').append(temp)
+                                } else if(response.matkul[i].day == "Thursday"){
+                                    $('#Thursday').append(temp)
+                                } else if(response.matkul[i].day == "Friday"){
+                                    $('#Friday').append(temp)
+                                }
+                            }
+                        }
+                    })
+                });
+            </script>
+            <script>
+                $(document).ready(function() {
+                    // get the CSRF token
+                    function getCookie(name) {
+                        let cookieValue = null;
+                        if (document.cookie && document.cookie !== '') {
+                            const cookies = document.cookie.split(';');
+                            for (let i = 0; i < cookies.length; i++) {
+                                const cookie = cookies[i].trim();
+                                // Does this cookie string begin with the name we want?
+                                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                    break;
+                                }
+                            }
+                        }
+                        return cookieValue;
+                    }
+                    const csrftoken = getCookie('csrftoken');
+
+                    /* send a POST request to create a matkul */
+                    $('#form').submit(function(e) {
+                        e.preventDefault(); // prevent the page from reload
+                        var url = "/susun-jadwal-matkul/create-matkul/"
+                        var data = {
+                            matkul_name: $('#nama_matkul').val(),
+                            matkul_day: $('#days').val(),
+                            matkul_start_time: $('#start_time_matkul').val(),
+                            matkul_end_time: $('#end_time_matkul').val(),
+                            user: $('#idUser').val(),
+                            csrfmiddlewaretoken: csrftoken,
+                        } 
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            data: data,
+                        }).done(function(response) {
+                            if (response.status === 'error') {
+                                alert("Matkul already added.")
+                            }
+                            else if (response.status === 'created') {
+                                var temp = `
+                                <p>
+                                    ${response.matkul_start_time} - ${response.matkul_end_time} | ${response.matkul_name}
+                                </p>
+                                `
+                                // append the new item to the <div> tag
+                                if (response.matkul_day == "Monday"){
+                                    $('#Monday').append(temp)
+                                } else if(response.matkul_day == "Tuesday"){
+                                    $('#Tuesday').append(temp)
+                                } else if(response.matkul_day == "Wednesday"){
+                                    $('#Wednesday').append(temp)
+                                } else if(response.matkul_day == "Thursday"){
+                                    $('#Thursday').append(temp)
+                                } else if(response.matkul_day == "Friday"){
+                                    $('#Friday').append(temp)
+                                }
+                            }
+                        })
+                        $(this).trigger('reset')
+                    })
+                });
+            </script>
+        </body>
+    </center>
+</html>

@@ -4,8 +4,6 @@ from django.http.response import HttpResponse
 from .models import InfoPendidikan
 from .forms import infoForm
 
-# Create your views here.
-
 def info_pendidikan(request):
     items = InfoPendidikan.objects.all()
     form = infoForm()
@@ -20,4 +18,4 @@ def info_pendidikan(request):
         'form':form,
         'items':items,
         }
-    return render(request, 'index.html', context)
+    return render(request, 'info_pendidikan.html', context)

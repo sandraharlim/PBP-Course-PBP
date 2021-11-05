@@ -59,10 +59,13 @@ INSTALLED_APPS = [
     'to_do_list',
     'app7_EventApp',
     'crispy_forms',
-    #'kuis',
     'covid_data',
     'forum',
     'info_pendidikan',
+    'app1',
+    'quizes',
+    'questions',
+    'result',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -164,6 +167,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # You can use this directory to store project-wide static files.
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
+    BASE_DIR / 'quizes' / 'static'
 ]
 
 # Make sure the directories exist to prevent errors when doing `collectstatic`.
@@ -172,4 +176,4 @@ for directory in [*STATICFILES_DIRS, STATIC_ROOT]:
 
 # Enable compression and caching features of whitenoise.
 # You can remove this if it causes problems on your setup.
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
