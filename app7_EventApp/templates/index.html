@@ -18,30 +18,48 @@ body {
   content: counter(my-sec-counter);
   text-align: center;
 }
+.hide{
+    display: none;
+}
+
+tr:hover .hide{
+    display: inline-block;
+    color: black;
+}
+table{
+  table-layout: fixed !important;
+  width: 180px;
+}
 </style>
 <body>
     <div class="container">
-    <table class ="table table-bordered border-primary" style="margin-top: 10px">
+    <span>{{ user.id }}</span>
+    <a href= {{AddEvent}} style="float: right; margin-top: 20px">+ Add Event</a>
+    <table class ="table table-stripped table-hover" style="margin-top: 10px">
         <tr>
             <th scope="row">No</th>
             <th scope="col">Event</th>
             <th scope="col">Time</th>
             <th scope="col">Description</th>
+            <th></th>
         </tr>
     {% if event %}
         {% for x in event %}
         <tr>
+        {% if user.id == x.author %}
             <td scope="col" id="numbering"></td>
             <td>{{ x.Name }}</td>
             <td>{{ x.Time}} </td>
             <td>{{ x.Description }}</td>
+            <td><a class = "tombol-kanan tombol hide" href="{{x.id}}/DeleteEvent">Delete</a><a class = "tombol-kanan tombol hide" href="{{x.id}}/UpdateEvent">Edit</a></td>
         </tr>
+          {% endif %}
         {% endfor %}
     {% endif %}
     </table>
-        <a class="tombol-tengah tombol"style="padding: 3px;" href={{ManageEvent}}>Manage Event<a>
     </div>
     <script>
+
     </script>
 </body>
 </html>

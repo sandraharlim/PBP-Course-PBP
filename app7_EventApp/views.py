@@ -2,29 +2,33 @@ from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from .models import Event
 from .forms import EventForm
 import operator
+from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView, DetailView
+from django.contrib.auth.models import User
 
 
 # Create your views here.
+@login_required(login_url='/login')
 def index (request):
     dateOrder = Event.objects.order_by('Time')
     ordered = sorted(dateOrder, key=operator.attrgetter('Time'))
     response = {'event':ordered}
     return render(request, "index.html", response)
 
+@login_required(login_url='/login')
 def add_event (request):
     context = {}
-
     form = EventForm(request.POST or None, request.FILES or None)
-
     if form.is_valid():
         # save the form data to model
-        
         form.save()
         form = EventForm()
         return HttpResponseRedirect("/EventApp")
 
     context['form']= form
     return render(request, "addEvent.html", context)
+    
+@login_required(login_url='/login')
 def manage_view (request):
     # dictionary for initial data with
     # field names as keys
@@ -37,6 +41,7 @@ def manage_view (request):
          
     return render(request, "manage_view.html", context)
 
+@login_required(login_url='/login')
 def update_view(request, id):
     # dictionary for initial data with
     # field names as keys
@@ -59,6 +64,7 @@ def update_view(request, id):
  
     return render(request, "update_view.html", context)
 
+@login_required(login_url='/login')
 def delete_view(request, id):
     # dictionary for initial data with
     # field names as keys
@@ -73,6 +79,6 @@ def delete_view(request, id):
         obj.delete()
         # after deleting redirect to
         # home page
-        return HttpResponseRedirect("/EventApp/ManageEvent")
+        return HttpResponseRedirect("/EventApp")
  
     return render(request, "delete_view.html", context)

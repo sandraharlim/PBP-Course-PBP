@@ -6,17 +6,17 @@
     </head>
     <style>
     </style>
-    <h3 style="text-align: center; margin-top:30px">Add Event</h3>
         <body>
-            <div class="container">
+            <div class="container" style="margin-top: 50px;">
                 <div class="row">
                 <div class="col-3">
                 </div>
                    <div class="col-6">
-                    <form action="" method=POST id="addForm">
-                        {{ form.as_table }}
+                    <form action="" method=POST>
+                        {{ form.as_table}}
                         {%csrf_token%}
-                        <input type="submit" class="tombol-kanan" value="Add Event">          
+                        <input type="submit" class="tombol-kanan tombol" value="Add Event"> 
+                        <a class="tombol-kanan tombol" href="/EventApp">Back</a>         
                     </form>
                 </div>
 

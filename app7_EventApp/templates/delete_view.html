@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+{% url 'EventApp' as Scheduler %}
     <body>
         <div class="container">
     <!-- Create a Form -->
@@ -8,7 +9,7 @@
                 {% csrf_token %}
                 Are you want to delete this item ?
                 <input type="submit" value="Yes" />
-                <a href="/">Cancel </a>
+                <a href="{{Scheduler}}">Cancel </a>
             </form>
         </div>
     </body>
