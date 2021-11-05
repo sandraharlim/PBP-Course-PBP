@@ -124,7 +124,7 @@
                     console.log(userId)
                     // send a GET request to build the list of todos
                     $.ajax({
-                        url: '/app-1/matkul-list/',
+                        url: '/susun-jadwal-matkul/matkul-list/',
                         type: 'GET',
                         dataType: 'json',
                     })
@@ -182,7 +182,7 @@
                     /* send a POST request to create a matkul */
                     $('#form').submit(function(e) {
                         e.preventDefault(); // prevent the page from reload
-                        var url = "/app-1/create-matkul/"
+                        var url = "/susun-jadwal-matkul/create-matkul/"
                         var data = {
                             matkul_name: $('#nama_matkul').val(),
                             matkul_day: $('#days').val(),

@@ -25,5 +25,5 @@ urlpatterns = [
     #path('kuis/', include('kuis.urls')),
     path('covid-data/', include('covid_data.urls')),
     path('add-forum/', include('forum.urls')),
-    path('app-1/', include('app1.urls')),
+    path('susun-jadwal-matkul/', include('app1.urls')),
 ]

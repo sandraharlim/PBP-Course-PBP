@@ -13,7 +13,7 @@ def matkul_list(request):
 
 @login_required(login_url='/login')
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'app1_home.html')
 
 # Referensi : https://dontrepeatyourself.org/post/django-todo-app-with-ajax-and-jquery/
 def matkul_create(request):
