@@ -3,6 +3,8 @@
 {% load static %}
 {%block content%}
 {% url 'EventApp' as Scheduler %}
+{% url 'info_pendidikan' as info_pendidikan %}
+{% url 'index' as to-do-list %}
 
 
   <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -113,7 +115,7 @@
         <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur muda">To-do List</div></a> 
       </div>
       <div id="kanan" class="col-sm" style="background-color: cadetblue;">
-        <a href="" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Recent Education</div></a>
+        <a href="{{info_pendidikan}}" style="text-decoration: none; color: black;"><div class="nama-fitur tua">Recent Education</div></a>
       </div>
     </div>
     <div class="row">
