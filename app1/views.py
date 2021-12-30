@@ -1,10 +1,15 @@
 from django.shortcuts import render
 from .models import Matkul
 import operator
-from django.http.response import JsonResponse
+from django.http.response import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
 
 # Create your views here.
+
+def json(request):
+    data = serializers.serialize('json', Matkul.objects.all())
+    return HttpResponse(data, content_type="application/json")
 
 def matkul_list(request):
     matkuls = Matkul.objects.all()  
