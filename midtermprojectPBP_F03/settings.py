@@ -76,7 +76,7 @@ INSTALLED_APPS = [
     'quizes',
     'questions',
     'result',
-    'rest_framework'
+    'rest_framework',
     'corsheaders',
 ]
 
