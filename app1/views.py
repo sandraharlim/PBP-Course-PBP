@@ -1,16 +1,25 @@
+from django.http import response
 from django.shortcuts import render
 from .models import Matkul
 import operator
-from django.http.response import JsonResponse
+from django.http.response import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
+from django.core import serializers
+import json
 
 # Create your views here.
+
+def matkul_json(request):
+    # matkuls = Matkul.objects.all()  
+    response = {'matkul' : list(Matkul.objects.values()),}
+    return HttpResponse(json.dumps(response, default=str), content_type="application/json")
 
 def matkul_list(request):
     matkuls = Matkul.objects.all()  
     # matkuls_ordered = sorted(matkuls, key=operator.attrgetter("day","start_time", "name"))
     return JsonResponse({'matkul' : list(matkuls.values())})
 
+# helll ini jelek bgt sinyalnyaaaaaaa..... 
 @login_required(login_url='/login')
 def home(request):
     return render(request, 'app1_home.html')
