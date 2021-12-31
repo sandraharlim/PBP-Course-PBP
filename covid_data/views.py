@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from django.core import serializers
+from django.contrib.auth.models import User
 from django.template import loader
 from .forms import SearchForm
 import requests
 from .models import SearchedCovidData
+from django.views.decorators.csrf import csrf_exempt
 
 
 def covid_data(request):
@@ -34,6 +35,7 @@ def covid_data(request):
         'date':data['last_date'],
         })
 
+@csrf_exempt
 def search(request):
     # request should be ajax and method should be GET.
     if request.is_ajax and request.method == "GET":
@@ -61,5 +63,34 @@ def search(request):
             'data_html': data_html,
         }
         return JsonResponse(output_data, status=200)
+    # some error occured
+    return JsonResponse({"error": ""}, status=400)
+
+def searchF(request):
+    # request should be ajax and method should be GET.
+    if request.method == "GET":
+        search_key = request.GET.get('search')
+        curr_user_id = request.GET.get('user_id')
+        response = requests.get('https://data.covid19.go.id/public/api/prov_list.json')
+        data = response.json()
+        searchedData = {}
+        for o in data['list_data']:
+            if o['key'] in search_key:
+                searchedData['provinsi'] = o['key']
+                searchedData['kasus_positif'] = o['status']['buckets'][2]['doc_count']
+                searchedData['kasus_sembuh'] = o['status']['buckets'][0]['doc_count']
+                searchedData['kasus_meninggal'] = o['status']['buckets'][1]['doc_count']
+                if curr_user_id != "":
+                    new = SearchedCovidData(author = User.objects.get(pk = curr_user_id),provinsi=searchedData['provinsi'], kasus_positif=searchedData['kasus_positif'],kasus_sembuh=searchedData['kasus_sembuh'],kasus_meninggal=searchedData['kasus_meninggal'])
+                    new.save()
+                return JsonResponse({'searchedData':searchedData}, status=200)
+    # some error occured
+    return JsonResponse({"error": ""}, status=400)
+
+def getModelsF(request):
+    if request.method == "GET":
+        curr_user_id = request.GET.get('user_id')
+        searchedData = SearchedCovidData.objects.filter(author = User.objects.get(pk = curr_user_id)).order_by('-id')
+        return JsonResponse({"searchedData": searchedData}, status=200)
     # some error occured
     return JsonResponse({"error": ""}, status=400)
