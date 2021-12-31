@@ -36,7 +36,12 @@ PRODUCTION = os.getenv('DATABASE_URL') is not None
 # SECURITY WARNING: don't run with debug turned on in production!
 # If you want to enable debugging on Heroku for learning purposes,
 # set this to True.
-DEBUG = not PRODUCTION
+PRODUCTION = os.environ.get('DATABASE_URL') is not None
+if PRODUCTION:
+    DEBUG = True
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'tk-pbp-d05.herokuapp.com']
+    DATABASES['default'] = dj_database_url.config()
+    SECURE_SSL_REDIRECT = True
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
 

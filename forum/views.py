@@ -90,15 +90,15 @@ def search_curahan_hati(request):
     return render(request, 'add_curahanhati.html', {'form': form, 'forum': forum_filter})
 
 def get_data(request):
-    if request.GET.get('jenis') == "InfoPandemi":
+    if request.GET['jenis'] == "InfoPandemi":
         listNama = InfoPandemi.objects.all().values
         return JsonResponse({'object': listNama})
 
-    elif request.GET.get('jenis') == "TipsKesehatan":
+    elif request.GET['jenis'] == "TipsKesehatan":
         listNama = TipsKesehatan.objects.all().values
         return JsonResponse({'object': listNama})
 
-    elif request.GET.get('jenis') == "CurahanHati":
+    elif request.GET['jenis'] == "CurahanHati":
         listNama = CurahanHati.objects.all().values
         return JsonResponse({'object': listNama})
 
