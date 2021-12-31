@@ -5,5 +5,5 @@ urlpatterns = [
     path('', covid_data, name='covid_data'),
     path('data/', search, name='search'),
     path('data/json', searchF, name='searchF'),
-    path('getmodels', searchF, name='getModelsF'),
+    path('getmodels', getModelsF, name='getModelsF'),
 ]

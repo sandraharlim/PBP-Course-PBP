@@ -6,7 +6,19 @@ from .forms import SearchForm
 import requests
 from .models import SearchedCovidData
 from django.views.decorators.csrf import csrf_exempt
+from django.forms import model_to_dict
+from django.core.serializers.json import DjangoJSONEncoder
+from django.db.models import Model
+from django.core import serializers
+import json
+class ExtendedEncoder(DjangoJSONEncoder):
 
+    def default(self, o):
+
+        if isinstance(o, Model):
+            return model_to_dict(o)
+
+        return super().default(o)
 
 def covid_data(request):
     searched_data = SearchedCovidData.objects.all().order_by('-id')
@@ -89,8 +101,10 @@ def searchF(request):
 
 def getModelsF(request):
     if request.method == "GET":
-        curr_user_id = request.GET.get('user_id')
+        curr_user_id = int(request.GET.get('user_id'))
         searchedData = SearchedCovidData.objects.filter(author = User.objects.get(pk = curr_user_id)).order_by('-id')
-        return JsonResponse({"searchedData": searchedData}, status=200)
+        tmpJson = serializers.serialize("json",searchedData)
+        tmpObj = json.loads(tmpJson)
+        return JsonResponse({"searchedData": tmpObj},encoder=ExtendedEncoder, status=200)
     # some error occured
     return JsonResponse({"error": ""}, status=400)
