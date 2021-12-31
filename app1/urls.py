@@ -6,4 +6,5 @@ urlpatterns = [
     path('matkul-list/', matkul_list, name='list-matkul'),
     path('create-matkul/', matkul_create, name='create-matkul'),
     path('json/', matkul_json, name='json'),
+    
 ]
